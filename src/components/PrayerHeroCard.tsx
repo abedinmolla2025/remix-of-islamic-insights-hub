@@ -135,7 +135,9 @@ const PrayerHeroCard = ({ prayerData }: PrayerHeroCardProps) => {
           </div>
 
           {/* Current Prayer */}
-          <h2 className="text-3xl font-bold mb-1">{getCurrentPrayer()}</h2>
+          <h2 className="text-3xl font-bold mb-1 transition-all duration-500">
+            {getCurrentPrayer()}
+          </h2>
 
           {/* Time */}
           <div className="flex items-baseline gap-2 mb-4">
