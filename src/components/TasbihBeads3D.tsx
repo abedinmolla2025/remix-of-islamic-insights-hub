@@ -33,7 +33,7 @@ const Bead = ({ position, isActive, isCounted, index }: BeadProps) => {
 
   return (
     <mesh ref={meshRef} position={position} castShadow receiveShadow>
-      <sphereGeometry args={[0.38, 32, 32]} />
+      <sphereGeometry args={[0.48, 32, 32]} />
       <meshStandardMaterial
         color={color}
         roughness={0.2}
@@ -107,7 +107,7 @@ const TasbihMala = ({ count, totalBeads }: TasbihMalaProps) => {
 
   const beadPositions = useMemo(() => {
     const positions: [number, number, number][] = [];
-    const radius = 3;
+    const radius = 4;
     
     for (let i = 0; i < totalBeads; i++) {
       const angle = (i / totalBeads) * Math.PI * 2;
@@ -179,7 +179,7 @@ const TasbihBeads3D = ({ count, totalBeads = 33 }: TasbihBeads3DProps) => {
   return (
     <div className="absolute -inset-8 pointer-events-none overflow-visible">
       <Canvas
-        camera={{ position: [0, 6, 12], fov: 40 }}
+        camera={{ position: [0, 7, 14], fov: 42 }}
         shadows
         gl={{ antialias: true, alpha: true }}
         style={{ background: 'transparent', overflow: 'visible' }}
