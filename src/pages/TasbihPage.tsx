@@ -184,7 +184,7 @@ const TasbihPage = () => {
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ type: "spring", delay: 0.2, stiffness: 200, damping: 20 }}
-          className="relative mt-8 w-72 h-72 md:w-80 md:h-80"
+          className="relative mt-8 w-80 h-80 md:w-96 md:h-96"
         >
           {/* 3D Tasbih Mala - Background */}
           <Suspense fallback={null}>
