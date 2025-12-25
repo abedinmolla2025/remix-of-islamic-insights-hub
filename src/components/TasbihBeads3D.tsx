@@ -107,7 +107,7 @@ const TasbihMala = ({ count, totalBeads }: TasbihMalaProps) => {
 
   const beadPositions = useMemo(() => {
     const positions: [number, number, number][] = [];
-    const radius = 4.5;
+    const radius = 6;
     
     for (let i = 0; i < totalBeads; i++) {
       const angle = (i / totalBeads) * Math.PI * 2;
