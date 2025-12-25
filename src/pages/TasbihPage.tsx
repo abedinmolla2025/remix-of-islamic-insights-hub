@@ -180,16 +180,19 @@ const TasbihPage = () => {
         </motion.div>
 
         {/* Main Counter Button with 3D Mala */}
-        <motion.div
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ type: "spring", delay: 0.2, stiffness: 200, damping: 20 }}
-          className="relative mt-8 w-72 h-72 md:w-80 md:h-80"
-        >
+        <div className="relative mt-8" style={{ width: '320px', height: '320px' }}>
           {/* 3D Tasbih Mala - Background */}
-          <Suspense fallback={null}>
-            <TasbihBeads3D count={count} totalBeads={currentDhikr.target > 50 ? 33 : currentDhikr.target} />
-          </Suspense>
+          <div className="absolute" style={{ 
+            width: '480px', 
+            height: '480px', 
+            top: '-80px', 
+            left: '-80px',
+            pointerEvents: 'none'
+          }}>
+            <Suspense fallback={null}>
+              <TasbihBeads3D count={count} totalBeads={currentDhikr.target > 50 ? 33 : currentDhikr.target} />
+            </Suspense>
+          </div>
           
           {/* Center Counter Button */}
           <div className="absolute inset-0 flex items-center justify-center">
@@ -261,7 +264,7 @@ const TasbihPage = () => {
               )}
             </AnimatePresence>
           </div>
-        </motion.div>
+        </div>
 
         {/* Progress info */}
         <motion.div

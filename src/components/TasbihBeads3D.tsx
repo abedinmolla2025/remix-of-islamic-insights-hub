@@ -33,7 +33,7 @@ const Bead = ({ position, isActive, isCounted, index }: BeadProps) => {
 
   return (
     <mesh ref={meshRef} position={position} castShadow receiveShadow>
-      <sphereGeometry args={[0.5, 32, 32]} />
+      <sphereGeometry args={[0.35, 32, 32]} />
       <meshStandardMaterial
         color={color}
         roughness={0.2}
@@ -107,13 +107,13 @@ const TasbihMala = ({ count, totalBeads }: TasbihMalaProps) => {
 
   const beadPositions = useMemo(() => {
     const positions: [number, number, number][] = [];
-    const radius = 6;
+    const radius = 3.5;
     
     for (let i = 0; i < totalBeads; i++) {
       const angle = (i / totalBeads) * Math.PI * 2;
       const x = Math.cos(angle) * radius;
       const z = Math.sin(angle) * radius;
-      const y = Math.sin(angle * 2) * 0.4; // Subtle wave
+      const y = Math.sin(angle * 2) * 0.3;
       positions.push([x, y, z]);
     }
     
@@ -177,12 +177,12 @@ interface TasbihBeads3DProps {
 
 const TasbihBeads3D = ({ count, totalBeads = 33 }: TasbihBeads3DProps) => {
   return (
-    <div className="absolute inset-0 pointer-events-none">
+    <div className="absolute inset-0 pointer-events-none" style={{ width: '100%', height: '100%' }}>
       <Canvas
-        camera={{ position: [0, 5, 10], fov: 40 }}
+        camera={{ position: [0, 5, 9], fov: 50 }}
         shadows
         gl={{ antialias: true, alpha: true }}
-        style={{ background: 'transparent' }}
+        style={{ background: 'transparent', width: '100%', height: '100%' }}
       >
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} intensity={1} castShadow />
