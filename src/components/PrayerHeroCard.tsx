@@ -253,7 +253,7 @@ const PrayerHeroCard = ({ prayerData, athanSettings }: PrayerHeroCardProps) => {
                     <div
                       className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-28 animate-pulse"
                       style={{
-                        background: 'linear-gradient(180deg, rgba(251, 191, 36, 0.6) 0%, rgba(251, 191, 36, 0.3) 40%, rgba(255, 255, 255, 0.1) 100%)',
+                        background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.4) 40%, rgba(255, 255, 255, 0.1) 100%)',
                         clipPath: 'polygon(35% 0%, 65% 0%, 100% 100%, 0% 100%)',
                         filter: 'blur(4px)',
                         willChange: 'opacity',
@@ -262,17 +262,17 @@ const PrayerHeroCard = ({ prayerData, athanSettings }: PrayerHeroCardProps) => {
                     
                     {/* Side Light Rays - static for performance */}
                     <div
-                      className="absolute top-0 left-1/2 -translate-x-[70%] w-10 h-24 opacity-40"
+                      className="absolute top-0 left-1/2 -translate-x-[70%] w-10 h-24 opacity-50"
                       style={{
-                        background: 'linear-gradient(180deg, rgba(251, 191, 36, 0.4) 0%, transparent 100%)',
+                        background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, transparent 100%)',
                         clipPath: 'polygon(60% 0%, 100% 0%, 100% 100%, 0% 100%)',
                         filter: 'blur(3px)',
                       }}
                     />
                     <div
-                      className="absolute top-0 left-1/2 -translate-x-[30%] w-10 h-24 opacity-40"
+                      className="absolute top-0 left-1/2 -translate-x-[30%] w-10 h-24 opacity-50"
                       style={{
-                        background: 'linear-gradient(180deg, rgba(251, 191, 36, 0.4) 0%, transparent 100%)',
+                        background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, transparent 100%)',
                         clipPath: 'polygon(0% 0%, 40% 0%, 100% 100%, 0% 100%)',
                         filter: 'blur(3px)',
                       }}
@@ -281,9 +281,9 @@ const PrayerHeroCard = ({ prayerData, athanSettings }: PrayerHeroCardProps) => {
                   
                   {/* Glow on Hands - static for performance */}
                   <div
-                    className="absolute top-4 left-1/2 -translate-x-1/2 w-12 h-8 rounded-full opacity-50"
+                    className="absolute top-4 left-1/2 -translate-x-1/2 w-12 h-8 rounded-full opacity-60"
                     style={{
-                      background: 'radial-gradient(ellipse, rgba(251, 191, 36, 0.5) 0%, transparent 70%)',
+                      background: 'radial-gradient(ellipse, rgba(255, 255, 255, 0.6) 0%, transparent 70%)',
                       filter: 'blur(6px)',
                     }}
                   />
