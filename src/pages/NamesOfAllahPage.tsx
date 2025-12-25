@@ -212,20 +212,76 @@ const NamesOfAllahPage = () => {
             <motion.div 
               className="relative rounded-3xl overflow-hidden shadow-2xl shadow-amber-400/20"
               layoutId={`card-${selectedName.id}`}
+              style={{ animation: 'gold-pulse 3s ease-in-out infinite' }}
             >
               {/* Card Background */}
               <div className="absolute inset-0 bg-gradient-to-br from-amber-100 via-yellow-50 to-orange-100" />
               <div className="absolute inset-0 bg-gradient-to-t from-amber-200/50 via-transparent to-yellow-100/30" />
               
-              {/* Gold decorative corners */}
-              <div className="absolute top-0 left-0 w-24 h-24 bg-gradient-to-br from-amber-400/30 to-transparent" />
-              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-yellow-400/30 to-transparent" />
-              <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-orange-400/20 to-transparent" />
-              <div className="absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-tl from-amber-400/30 to-transparent" />
+              {/* Continuous Shimmer Effect */}
+              <div 
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  background: 'linear-gradient(105deg, transparent 20%, rgba(255,215,0,0.2) 35%, rgba(255,215,0,0.4) 50%, rgba(255,215,0,0.2) 65%, transparent 80%)',
+                  backgroundSize: '200% 100%',
+                  animation: 'shimmer 2s infinite linear',
+                }}
+              />
               
-              {/* Gold border effect */}
-              <div className="absolute inset-0 border-2 border-amber-400/40 rounded-3xl" />
-              <div className="absolute inset-[3px] border border-amber-300/30 rounded-3xl" />
+              {/* Gold Particles */}
+              {[...Array(12)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute w-2 h-2 rounded-full"
+                  style={{
+                    background: `radial-gradient(circle, rgba(255,215,0,0.8) 0%, rgba(255,193,7,0.4) 50%, transparent 70%)`,
+                    left: `${10 + (i * 7)}%`,
+                    top: `${15 + (i % 4) * 20}%`,
+                  }}
+                  animate={{
+                    y: [0, -15, 0],
+                    x: [0, i % 2 === 0 ? 8 : -8, 0],
+                    opacity: [0.3, 0.8, 0.3],
+                    scale: [0.8, 1.2, 0.8],
+                  }}
+                  transition={{
+                    duration: 2 + (i * 0.3),
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: i * 0.2,
+                  }}
+                />
+              ))}
+              
+              {/* Gold decorative corners */}
+              <motion.div 
+                animate={{ opacity: [0.3, 0.6, 0.3] }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className="absolute top-0 left-0 w-28 h-28 bg-gradient-to-br from-amber-400/40 to-transparent" 
+              />
+              <motion.div 
+                animate={{ opacity: [0.4, 0.7, 0.4] }}
+                transition={{ duration: 2.5, repeat: Infinity, delay: 0.5 }}
+                className="absolute top-0 right-0 w-28 h-28 bg-gradient-to-bl from-yellow-400/40 to-transparent" 
+              />
+              <motion.div 
+                animate={{ opacity: [0.3, 0.5, 0.3] }}
+                transition={{ duration: 3, repeat: Infinity, delay: 1 }}
+                className="absolute bottom-0 left-0 w-28 h-28 bg-gradient-to-tr from-orange-400/30 to-transparent" 
+              />
+              <motion.div 
+                animate={{ opacity: [0.4, 0.6, 0.4] }}
+                transition={{ duration: 2, repeat: Infinity, delay: 0.3 }}
+                className="absolute bottom-0 right-0 w-28 h-28 bg-gradient-to-tl from-amber-400/40 to-transparent" 
+              />
+              
+              {/* Animated Gold border effect */}
+              <div className="absolute inset-0 border-2 border-amber-400/50 rounded-3xl" />
+              <motion.div 
+                animate={{ opacity: [0.3, 0.6, 0.3] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+                className="absolute inset-[3px] border border-amber-300/40 rounded-3xl" 
+              />
               
               <div className="relative p-8 md:p-12 text-center">
                 {/* Number Badge */}
