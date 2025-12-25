@@ -282,8 +282,41 @@ const PrayerHeroCard = ({ prayerData, athanSettings }: PrayerHeroCardProps) => {
                       ))}
                     </div>
                     <div className="flex flex-col ml-3">
-                      <span className="text-2xl font-premium font-semibold text-white tracking-[0.25em] bg-gradient-to-r from-white via-amber-100 to-white bg-clip-text text-transparent drop-shadow-lg" style={{ textShadow: '0 2px 10px rgba(255,255,255,0.3)' }}>NOOR</span>
-                      <span className="text-[9px] font-premium text-amber-300/80 uppercase tracking-[0.35em] font-medium">Islamic App</span>
+                      <motion.span 
+                        className="text-2xl font-premium font-semibold tracking-[0.3em] relative"
+                        style={{ 
+                          background: 'linear-gradient(135deg, #ffffff 0%, #fef3c7 25%, #ffffff 50%, #fcd34d 75%, #ffffff 100%)',
+                          backgroundSize: '200% 100%',
+                          WebkitBackgroundClip: 'text',
+                          WebkitTextFillColor: 'transparent',
+                          backgroundClip: 'text',
+                          filter: 'drop-shadow(0 2px 8px rgba(251, 191, 36, 0.4))'
+                        }}
+                        animate={{
+                          backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
+                        }}
+                        transition={{
+                          duration: 4,
+                          repeat: Infinity,
+                          ease: "linear"
+                        }}
+                      >
+                        NOOR
+                      </motion.span>
+                      <motion.span 
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.3 }}
+                        className="text-[9px] font-premium uppercase tracking-[0.4em] font-medium"
+                        style={{
+                          background: 'linear-gradient(90deg, #fbbf24 0%, #fef3c7 50%, #fbbf24 100%)',
+                          WebkitBackgroundClip: 'text',
+                          WebkitTextFillColor: 'transparent',
+                          backgroundClip: 'text',
+                        }}
+                      >
+                        Islamic App
+                      </motion.span>
                     </div>
                   </div>
                 </div>
