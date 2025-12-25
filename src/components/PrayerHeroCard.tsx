@@ -167,49 +167,70 @@ const PrayerHeroCard = ({ prayerData, athanSettings }: PrayerHeroCardProps) => {
             {/* Left Section - Main Info */}
             <div className="flex-1 space-y-5 relative z-20">
               
-              {/* Top Bar - Location & Hijri Date */}
+              {/* Top Bar - NOOR Branding & Controls */}
               <motion.div 
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.1 }}
                 className="flex flex-wrap items-center justify-between gap-3"
               >
+                {/* NOOR Branding */}
                 <div className="flex items-center gap-3">
-                  <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20">
-                    {isLoading ? (
-                      <Loader2 size={14} className="animate-spin text-amber-400" />
-                    ) : (
-                      <MapPin size={14} className="text-amber-400" />
-                    )}
-                    <span className="text-sm text-white font-medium">{locationStr}</span>
-                  </div>
-                  <div className="hidden sm:flex items-center gap-2 bg-amber-400/15 backdrop-blur-sm rounded-full px-4 py-2 border border-amber-400/30">
-                    <span className="font-arabic text-sm text-amber-300">{hijriDateStr}</span>
+                  <div className="flex items-center gap-2">
+                    <div className="relative">
+                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 via-amber-500 to-orange-500 flex items-center justify-center shadow-lg shadow-amber-500/30">
+                        <span className="text-lg font-bold text-white">N</span>
+                      </div>
+                      <motion.div 
+                        animate={{ scale: [1, 1.2, 1], opacity: [0.6, 0.3, 0.6] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                        className="absolute inset-0 bg-amber-400 rounded-xl blur-md -z-10"
+                      />
+                    </div>
+                    <div className="flex flex-col">
+                      <span className="text-xl font-bold text-white tracking-wide">NOOR</span>
+                      <span className="text-[10px] text-white/60 uppercase tracking-widest">Islamic App</span>
+                    </div>
                   </div>
                 </div>
-                
-                {/* Athan Bell Button */}
-                {athanSettings && (
-                  <motion.button
-                    whileTap={{ scale: 0.95 }}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      athanSettings.onOpenSettings();
-                    }}
-                    className="relative p-2.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-colors"
-                  >
-                    {athanSettings.isPlaying ? (
-                      <BellRing size={18} className="text-amber-400 animate-pulse" />
-                    ) : athanSettings.enabled ? (
-                      <Bell size={18} className="text-amber-400" />
+
+                {/* Location, Hijri & Bell Controls */}
+                <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 py-1.5 border border-white/20">
+                    {isLoading ? (
+                      <Loader2 size={12} className="animate-spin text-amber-400" />
                     ) : (
-                      <Bell size={18} className="text-white/50" />
+                      <MapPin size={12} className="text-amber-400" />
                     )}
-                    {athanSettings.enabled && (
-                      <span className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-green-500 rounded-full border-2 border-emerald-700" />
-                    )}
-                  </motion.button>
-                )}
+                    <span className="text-xs text-white font-medium">{locationStr}</span>
+                  </div>
+                  <div className="hidden sm:flex items-center gap-2 bg-amber-400/15 backdrop-blur-sm rounded-full px-3 py-1.5 border border-amber-400/30">
+                    <span className="font-arabic text-xs text-amber-300">{hijriDateStr}</span>
+                  </div>
+                  
+                  {/* Athan Bell Button */}
+                  {athanSettings && (
+                    <motion.button
+                      whileTap={{ scale: 0.95 }}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        athanSettings.onOpenSettings();
+                      }}
+                      className="relative p-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-colors"
+                    >
+                      {athanSettings.isPlaying ? (
+                        <BellRing size={16} className="text-amber-400 animate-pulse" />
+                      ) : athanSettings.enabled ? (
+                        <Bell size={16} className="text-amber-400" />
+                      ) : (
+                        <Bell size={16} className="text-white/50" />
+                      )}
+                      {athanSettings.enabled && (
+                        <span className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-green-500 rounded-full border-2 border-emerald-700" />
+                      )}
+                    </motion.button>
+                  )}
+                </div>
               </motion.div>
 
               {/* Current Time - Hero Display */}
