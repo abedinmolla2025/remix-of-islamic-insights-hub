@@ -27,6 +27,13 @@ const PrayerHeroCard = ({ prayerData }: PrayerHeroCardProps) => {
     return { hours, minutes };
   };
 
+  const formatPrayerTime = (timeStr: string): string => {
+    const [hours, minutes] = timeStr.split(":").map(Number);
+    const period = hours >= 12 ? "PM" : "AM";
+    const hour12 = hours % 12 || 12;
+    return `${hour12}:${minutes.toString().padStart(2, "0")} ${period}`;
+  };
+
   const prayerSchedule = prayerTimes
     ? [
         { name: "Fajr", time: prayerTimes.Fajr },
@@ -286,7 +293,7 @@ const PrayerHeroCard = ({ prayerData }: PrayerHeroCardProps) => {
                     <p className={`text-sm sm:text-base font-bold tabular-nums ${
                       isCurrentPrayer ? 'text-[hsl(45,93%,58%)]' : 'text-white/90'
                     }`}>
-                      {prayer.time}
+                      {formatPrayerTime(prayer.time)}
                     </p>
                   </motion.div>
                 );
