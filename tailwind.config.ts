@@ -17,6 +17,7 @@ export default {
         sans: ["Poppins", "Inter", "system-ui", "sans-serif"],
         arabic: ["Cairo", "Scheherazade New", "Noto Naskh Arabic", "Amiri", "serif"],
         display: ["Poppins", "Playfair Display", "serif"],
+        premium: ["Cinzel", "Playfair Display", "serif"],
       },
       colors: {
         border: "hsl(var(--border))",
