@@ -187,9 +187,7 @@ const TasbihPage = () => {
           className="relative mt-8 w-[min(420px,92vw)] h-[min(420px,92vw)] md:w-[min(520px,80vw)] md:h-[min(520px,80vw)] overflow-visible"
         >
           {/* 3D Tasbih Mala - Background */}
-          <Suspense fallback={null}>
-            <TasbihBeads3D count={count} totalBeads={currentDhikr.target > 50 ? 33 : currentDhikr.target} />
-          </Suspense>
+          <TasbihBeads3D count={count} totalBeads={currentDhikr.target > 50 ? 33 : currentDhikr.target} />
           
           {/* Center Counter Button */}
           <div className="absolute inset-0 flex items-center justify-center">
