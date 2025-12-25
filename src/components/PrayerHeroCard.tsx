@@ -180,26 +180,26 @@ const PrayerHeroCard = ({ prayerData, athanSettings }: PrayerHeroCardProps) => {
                     <div className="relative">
                       {/* Multiple Glow Layers - White */}
                       <motion.div 
-                        animate={{ scale: [1, 1.4, 1], opacity: [0.4, 0.2, 0.4] }}
+                        animate={{ scale: [1, 1.4, 1], opacity: [0.2, 0.1, 0.2] }}
                         transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                         className="absolute -inset-3 bg-white rounded-full blur-xl"
                       />
                       <motion.div 
-                        animate={{ scale: [1.1, 1.3, 1.1], opacity: [0.5, 0.3, 0.5] }}
+                        animate={{ scale: [1.1, 1.3, 1.1], opacity: [0.25, 0.15, 0.25] }}
                         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
                         className="absolute -inset-2 bg-gradient-to-br from-white via-gray-100 to-white rounded-full blur-lg"
                       />
                       <motion.div 
-                        animate={{ scale: [1, 1.15, 1], opacity: [0.7, 0.4, 0.7] }}
+                        animate={{ scale: [1, 1.15, 1], opacity: [0.35, 0.2, 0.35] }}
                         transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
                         className="absolute -inset-1 bg-white rounded-full blur-md"
                       />
                       <img 
                         src={noorLogo} 
                         alt="NOOR Logo" 
-                        className="w-14 h-14 rounded-full object-cover shadow-lg border-2 border-white/70 relative z-10"
+                        className="w-14 h-14 rounded-full object-cover shadow-lg border-2 border-white/50 relative z-10"
                         style={{ 
-                          boxShadow: '0 0 20px 4px rgba(255, 255, 255, 0.6), 0 0 40px 8px rgba(255, 255, 255, 0.3)' 
+                          boxShadow: '0 0 15px 3px rgba(255, 255, 255, 0.35), 0 0 30px 6px rgba(255, 255, 255, 0.15)' 
                         }}
                       />
                       {/* Falling Light Particles - Large White */}
